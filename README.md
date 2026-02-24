@@ -15,6 +15,8 @@ torch-geometric   2.7.0
 CUDA  11.8.87
 
 ## MTDL-CNIA model architecture
+
+
 The source code is located in the 'code/' directory.
 
 The implementation consists of two main stages:
