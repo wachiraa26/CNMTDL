@@ -1,7 +1,3 @@
-# main.py  (SINGLE-SEED run; meant for SLURM array jobs)
-# Saves predictions into: ./predictions/run<SLURM_ARRAY_JOB_ID>/
-# Example: ./predictions/run1204887/retinamnist_seed23_lr0.005_ep30_L5.npz
-
 import argparse
 import numpy as np
 import os
@@ -123,3 +119,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
