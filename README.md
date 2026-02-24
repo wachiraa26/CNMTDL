@@ -22,7 +22,7 @@ The implementation consists of two main stages:
 2. **Image Analysis (CCNN Training) Stage**
 
 
-### 1. Image Decomposition
+### Image Decomposition
 Core decomposition functions are implemented in: decomposition.py
 
 To decompose images into the three orthogonal components (gradient, curl, and harmonic components), run:
@@ -30,6 +30,6 @@ python prepare_decomposition.py
 
 This will generate the decomposed dataset (e.g., BloodMNIST).
 
-### 2. Model Training and Evaluation
+### Model Training and Evaluation
 To train and evaluate the Combinatorial Convolutional Neural Network (CCNN), run: 
 python main.py
