@@ -8,7 +8,6 @@ import torch
 
 
 def get_run_id(cli_run_id: str | None) -> str:
-    # ✅ Mother submission id for arrays
     env_run_id = (
         os.environ.get("SLURM_ARRAY_JOB_ID")
         or os.environ.get("SLURM_JOB_ID")
@@ -19,7 +18,7 @@ def get_run_id(cli_run_id: str | None) -> str:
 
 def layers_by_size(dataname: str, data_num: dict) -> int:
     n = data_num[dataname]
-    return 4 if n < 150_000 else 5
+    return 5 if n < 150_000 else 6
 
 
 def main():
@@ -38,22 +37,12 @@ def main():
     print(">>> SLURM_ARRAY_JOB_ID:", os.environ.get("SLURM_ARRAY_JOB_ID"))
     print(">>> SLURM_JOB_ID:", os.environ.get("SLURM_JOB_ID"))
 
-    data_2d = [
-        "retinamnist", "pneumoniamnist", "dermamnist", "bloodmnist",
-        "organamnist", "organcmnist", "organsmnist", "pathmnist",
-        "octmnist", "tissuemnist", "chestmnist"
-    ]
+    data_2d = ["retinamnist", "bloodmnist","organamnist", "organcmnist", "organsmnist"]
 
-    # set what you want to run here
-    datasets = ["chestmnist"]
+    datasets =  data_2d[0]
 
-    data_num = {
-        "retinamnist": 1600, "pneumoniamnist": 5856, "dermamnist": 10015, "bloodmnist": 17092,
-        "organamnist": 58830, "organcmnist": 23583, "organsmnist": 25211, "pathmnist": 107180,
-        "octmnist": 109309, "chestmnist": 112120, "tissuemnist": 236386
-    }
+    data_num = { "retinamnist": 1600, "bloodmnist": 17092,"organamnist": 58830, "organcmnist": 23583, "organsmnist": 25211}
 
-    # hyperparams (match your previous runs)
     epoch = 30
     img_size = 224
     batch = 64
@@ -61,7 +50,6 @@ def main():
     h_channel = 64
     head = 4
 
-    # ✅ Folder per mother run id
     pred_root = "./predictions"
     run_dir = os.path.join(pred_root, f"run{run_id}")
     os.makedirs(run_dir, exist_ok=True)
@@ -96,7 +84,6 @@ def main():
 
         print(f"\nSeed {seed}  ACC={acc*100:.2f}  AUC={auc*100:.2f}")
 
-        # ✅ Save inside run folder (NO per-task job id in name)
         save_path = os.path.join(
             run_dir,
             f"{dataname}_seed{seed}_lr{lr}_ep{epoch}_L{layer_num}.npz"
@@ -119,4 +106,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
