@@ -15,7 +15,7 @@ pytorch  2.6.0
 torch-geometric   2.7.0
 CUDA  11.8.87
 
-## MTDL-CNIA model architecture
+## CNMTDL model architecture
 
 
 The source code is located in the 'code/' directory.
