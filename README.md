@@ -1,6 +1,5 @@
 # CNMTDL
-This is repository contains the code implementation of Combinatorial Network-Enabled Manifold Topological
-Deep Learning for Image Analysis
+This is repository contains the code implementation of Combinatorial Network-Enabled Manifold Topological Deep Learning  for Image Analysis
 
 ## Python Environment
 Python 3.10.12
