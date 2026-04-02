@@ -3,15 +3,25 @@ This is repository contains the code implementation of Combinatorial Network-Ena
 
 ## Python Environment
 Python 3.10.12
+
 medmnist 3.0.2
+
 h5py 3.15.0
+
 numpy 2.2.6
+
 pandas 2.3.3
+
 pillow 10.4.0
+
 scipy  1.15.3
+
 torch   2.7.1+cu118
+
 pytorch  2.6.0
+
 torch-geometric   2.7.0
+
 CUDA  11.8.87
 
 ## CNMTDL model architecture
