@@ -29,9 +29,9 @@ def main():
     print("Seed:", seed)
     print("Dataset:", dataname)
 
-    data_2d = [ "retinamnist", "bloodmnist", "organamnist","organcmnist", "organsmnist"]
+    data_2d = [ "retinamnist", "dermamnist","bloodmnist", "organamnist","organcmnist", "organsmnist"]
 
-    data_num = { "retinamnist": 1600,   "bloodmnist": 17092,  "organamnist": 58830,   "organcmnist": 23583,"organsmnist": 25211}
+    data_num = { "retinamnist": 1600,  "dermamnist": 10015, "bloodmnist": 17092,  "organamnist": 58830,   "organcmnist": 23583,"organsmnist": 25211}
 
     assert dataname in data_2d, f"{dataname} not in supported dataset list"
     assert dataname in data_num, f"{dataname} missing from data_num"
