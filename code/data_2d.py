@@ -13,9 +13,9 @@ from medmnist.dataset import MedMNIST2D
 
        
 def load_decomposition_img(dataname,typ,index,label):
-    train_test_num = {'retinamnist':[1080,400],'bloodmnist':[11959,3421],'organamnist':[34561,17778],'organcmnist':[12975,8216],'organsmnist':[13932,8827]}
+    train_test_num = {'retinamnist':[1080,400],'dermamnist':[7007,2005],'bloodmnist':[11959,3421],'organamnist':[34561,17778],'organcmnist':[12975,8216],'organsmnist':[13932,8827]}
     train_num,test_num = train_test_num[dataname]
-    channel_num = {'retinamnist':3,'bloodmnist':3,'organamnist':1,'organcmnist':1,'organsmnist':1}
+    channel_num = {'retinamnist':3,'dermamnist':3,'bloodmnist':3,'organamnist':1,'organcmnist':1,'organsmnist':1}
     
     if channel_num[dataname]==3:
         rgb_list = [0,1,2]
@@ -80,7 +80,10 @@ class My_MedMNIST2D(MedMNIST2D):
 
 class RetinaMNIST(My_MedMNIST2D):
     flag = "retinamnist"
-
+       
+class DermaMNIST(My_MedMNIST2D):
+    flag = "dermamnist"
+       
 class BloodMNIST(My_MedMNIST2D):
     flag = "bloodmnist"
 
@@ -99,6 +102,8 @@ class OrganSMNIST(My_MedMNIST2D):
 def get_data_class(typ):
     if typ=='retinamnist':
         return RetinaMNIST
+    elif typ=='dermamnist':
+        return DermaMNIST
     elif typ=='bloodmnist':
         return BloodMNIST
     elif typ=='organamnist':
