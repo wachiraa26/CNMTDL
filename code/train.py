@@ -13,7 +13,7 @@ from medmnist import INFO
 from medmnist.evaluator import getACC, getAUC
 
 from model import CCNN
-from data_2d_chest import get_train_val_test_data_2d
+from data_2d import get_train_val_test_data_2d
 
 torch.set_default_dtype(torch.float32)
 
