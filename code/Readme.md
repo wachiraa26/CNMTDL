@@ -40,5 +40,6 @@ This will generate the decomposed dataset (e.g., BloodMNIST).
 ### Model Training and Evaluation
 To train and evaluate the Combinatorial Convolutional Neural Network (CCNN), run: 
 ```
-python main.py
+python main.py --seed --dataset
+python main_3d.py --seed  --dataset 
 ```
